@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Vendas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Página de Vendas</h1>
+        <div id="carrinho">
+            <button id="verCarrinho">Ver Carrinho (<span id="carrinhoQuantidade">0</span>)</button>
+            <div id="carrinhoDetalhes" class="hidden">
+                <h2>Itens no Carrinho</h2>
+                <ul id="listaCarrinho"></ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="produto">
+            <h2 id="produtoNome">Produto Exemplo</h2>
+            <p id="produtoDescricao">Descrição do produto exemplo.</p>
+            <p id="produtoPreco">R$ 99,99</p>
+            <button id="adicionarCarrinho">Adicionar ao Carrinho</button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
