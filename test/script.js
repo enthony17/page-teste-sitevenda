@@ -4,9 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const carrinhoDetalhes = document.getElementById('carrinhoDetalhes');
     const carrinhoQuantidade = document.getElementById('carrinhoQuantidade');
     const listaCarrinho = document.getElementById('listaCarrinho');
+    const produtoNomeElem = document.getElementById('produtoNome');
 
     let carrinho = [];
 
+    // Função para atualizar a visualização do carrinho
     function atualizarCarrinho() {
         carrinhoQuantidade.textContent = carrinho.length;
         listaCarrinho.innerHTML = '';
@@ -17,12 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Adiciona um produto ao carrinho quando o botão "Adicionar Carrinho" é clicado
     adicionarCarrinhoButton.addEventListener('click', () => {
-        const produtoNome = document.getElementById('produtoNome').textContent;
-        carrinho.push(produtoNome);
-        atualizarCarrinho();
+        if (produtoNomeElem) {
+            const produtoNome = produtoNomeElem.textContent.trim();
+            if (produtoNome && !carrinho.includes(produtoNome)) {
+                carrinho.push(produtoNome);
+                atualizarCarrinho();
+            }
+        }
     });
 
+    // Mostra ou esconde os detalhes do carrinho quando o botão "Ver Carrinho" é clicado
     verCarrinhoButton.addEventListener('click', () => {
         carrinhoDetalhes.classList.toggle('hidden');
     });
